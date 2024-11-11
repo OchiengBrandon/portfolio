@@ -1,0 +1,108 @@
+/* animation.css */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.typing-effect::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px var(--shadow);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.blog-card {
+    background: var(--card-bg, #ffffff);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.1);
+}
+
+.blog-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--primary-color, #3b82f6);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color, #3b82f6);
+}
+
+.blog-button:hover {
+    background: var(--primary-color, #3b82f6);
+    color: white;
+}
+
+.blog-button .arrow-icon {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    transition: transform 0.3s ease;
+}
+
+.blog-button:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+/* Dark mode styles */
+.dark-mode .blog-card {
+    background: var(--dark-card-bg, #1f2937);
+}
+
+.dark-mode .blog-category {
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--primary-color, #60a5fa);
+}
+
+.dark-mode .blog-title {
+    color: var(--dark-text-primary, #f3f4f6);
+}
+
+.dark-mode .blog-excerpt,
+.dark-mode .blog-meta {
+    color: var(--dark-text-secondary, #9ca3af);
+}
